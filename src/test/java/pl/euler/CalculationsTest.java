@@ -8,22 +8,22 @@ import static org.hamcrest.CoreMatchers.is;
 public class CalculationsTest {
 
     @Test
-    public void shouldReturnResultFor10(){
+    public void shouldReturnResultFor10() {
         //given
-        Calculations calculator= new Calculations();
+        Calculations calculator = new Calculations();
         //when
-        long  result= calculator.sumAllnumbers(10);
+        String result = calculator.calculateAndFindLast10digits(10);
         //then
-        Assert.assertThat(result, is(10405071317L));
+        Assert.assertThat(result, is("0405071317"));
     }
 
     @Test
-    public void shouldReturnResultFor3(){
+    public void shouldReturnResultFor1000() {
         //given
-        Calculations calculator= new Calculations();
+        Calculations calculator = new Calculations();
         //when
-        long  result= calculator.sumAllnumbers(3);
+        String result = calculator.calculateAndFindLast10digits(1000);
         //then
-        Assert.assertThat(result, is(32L));
+        Assert.assertThat(result, is("9110846700"));
     }
 }

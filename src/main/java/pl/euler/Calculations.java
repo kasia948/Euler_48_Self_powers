@@ -1,17 +1,12 @@
 package pl.euler;
-
-import static java.lang.Math.*;
+import java.math.BigInteger;
 
 public class Calculations {
-    public long sumAllnumbers(long max) {
-        long sum = 0;
-        double x = 1;
+    public  String calculateAndFindLast10digits(int MAX) {
 
-        while (x <= max) {
-            sum = sum + (long) pow(x, x);
-            x++;
-        }
-        return sum;
+        BigInteger sum = new BigInteger("1");
+        for (int i = 2; i <= MAX; i++)
+            sum = sum.add(new BigInteger(i + "").pow(i));
+        return sum.toString().substring(sum.toString().length() - 10);
     }
-
 }
